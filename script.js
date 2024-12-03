@@ -1,19 +1,22 @@
 const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail';
 // Soluzione 1
-const emails = [];
+let emails = [];
 
 const checkAndAddEmailsToDOM = () => {
+  const ul = document.querySelector('ul');
+  ul.innerHTML = '';
   if (emails.length === 10) {
     emails.forEach(email => {
       const li = document.createElement('li');
       li.innerText = email;
-      document.querySelector('ul').append(li);
+      ul.append(li);
     });
 
   }
 }
 
 const fetchEmails = (numEmails) => {
+  emails = [];
   for (let i = 0; i < numEmails; i++) {
     axios.get(endpoint)
       .then(({ data }) => {
@@ -24,3 +27,5 @@ const fetchEmails = (numEmails) => {
 }
 
 fetchEmails(10);
+
+document.querySelector('button').addEventListener('click', () => fetchEmails(10));
