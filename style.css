@@ -1,3 +1,21 @@
+ul {
+  list-style: none;
+}
+
+ul li {
+  border: 1px solid rgb(219, 219, 219);
+  padding: 1rem;
+  margin-block: 0.2rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+ul li:hover {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  transform: scale(1.1);
+}
+
 .loader {
   width: 48px;
   height: 48px;
@@ -7,7 +25,9 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  margin-block: 3rem;
 }
+
 
 @keyframes rotation {
   0% {
